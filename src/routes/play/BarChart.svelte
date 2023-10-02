@@ -80,8 +80,7 @@
 	}
 
 	.tick line {
-		stroke: red;
-		/* stroke: var(--theme-font-color-base); */
+		stroke: rgb(var(--color-secondary-900));
 		stroke-dasharray: 2;
 	}
 
@@ -99,7 +98,7 @@
 	}
 
 	.bars rect {
-		fill: #a11;
+		fill: rgb(var(--color-primary-500));
 		stroke: none;
 		opacity: 0.65;
 	}
