@@ -47,7 +47,7 @@
 			disabled={$$props.max && $$props.max === value}><i class="fa-solid fa-plus" /></button
 		>
 		<button
-			class="btn-icon w-8 variant-ghost-secondary"
+			class="btn-icon w-8 variant-filled-secondary"
 			on:click={decrement}
 			disabled={positiveOnly && value <= 0}><i class="fa-solid fa-minus" /></button
 		>
