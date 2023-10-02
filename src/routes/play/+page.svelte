@@ -66,7 +66,7 @@
 		<span>%</span>
 	</div>
 
-	<div class="w-96">
+	<div class="md:w-96">
 		<Accordion>
 			<AccordionItem>
 				<svelte:fragment slot="lead"><i class="fas fa-chart-bar fa-rotate-270" /></svelte:fragment>

@@ -4,11 +4,13 @@
 	export let label: string | undefined = undefined;
 	export let value: number;
 	export let positiveOnly: boolean = false;
+	export let sm: boolean = false;
 
 	interface $$Props extends HTMLInputAttributes {
 		label?: string;
 		value: number;
 		positiveOnly?: boolean;
+		sm?: boolean;
 	}
 
 	const increment = () => value++;
@@ -33,19 +35,19 @@
 		{...$$props}
 		id={name}
 		{name}
-		class="input w-16 h-8 text-center text-lg"
+		class={`input w-${sm ? 8 : 16} h-8 text-center text-lg`}
 		type="number"
 		bind:value
 		min={positiveOnly ? 0 : undefined}
 	/>
 	<div class="flex flex-row items-center space-x-2">
 		<button
-			class="btn-icon variant-ghost-primary"
+			class="btn-icon w-8 variant-ghost-primary"
 			on:click={increment}
 			disabled={$$props.max && $$props.max === value}><i class="fa-solid fa-plus" /></button
 		>
 		<button
-			class="btn-icon variant-ghost-secondary"
+			class="btn-icon w-8 variant-ghost-secondary"
 			on:click={decrement}
 			disabled={positiveOnly && value <= 0}><i class="fa-solid fa-minus" /></button
 		>

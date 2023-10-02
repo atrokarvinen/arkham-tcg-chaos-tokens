@@ -3,7 +3,7 @@
 
 	export let number: number | undefined = undefined;
 	export let name: TokenName | undefined;
-	export let isFilled: boolean;
+	export let isFilled: boolean = false;
 	export let size: '8' | '16';
 
 	const getImageSrc = (name: TokenName) => {
