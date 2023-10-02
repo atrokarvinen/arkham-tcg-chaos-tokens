@@ -1,0 +1,34 @@
+<script lang="ts">
+	import TokenIcon from './TokenIcon.svelte';
+	import type { Token, TokenName } from './types';
+
+	export let tokens: Token[];
+
+	$: tokensInBag = tokens
+		.sort(sortByRulebook)
+		.map((token) => {
+			const { quantity, value, name } = token;
+			const arr = Array.from(Array(quantity).keys());
+			return arr.map((_, index) =>
+				name
+					? { name, number: undefined, key: `${token.id}-${index}` }
+					: { name: 'Auto-fail' as TokenName, number: value, key: `${token.id}-${index}` }
+			);
+		})
+		.flat();
+
+	const sortByRulebook = (a: Token, b: Token) => {
+		return a.rulebookSortOrder < b.rulebookSortOrder ? -1 : 1;
+	};
+</script>
+
+<div>
+	<ul class="flex flex-wrap items-center">
+		{#each tokensInBag as token, i (token.key)}
+			<TokenIcon name={token.name} number={token.number} isFilled={false} size={'8'} />
+			{#if i < tokensInBag.length - 1}
+				<span class="font-bold text-lg mr-1">,</span>
+			{/if}
+		{/each}
+	</ul>
+</div>
