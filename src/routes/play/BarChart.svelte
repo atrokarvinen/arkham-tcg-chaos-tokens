@@ -4,7 +4,7 @@
 
 	export let points: ChartDataPoint[];
 
-	const xTicks = Array.from(Array(11).keys());
+	const xTicks = Array.from(Array(12).keys());
 	const yTicks = [0, 20, 40, 60, 80, 100];
 	const padding = { top: 20, right: 15, bottom: 20, left: 25 };
 
@@ -30,7 +30,7 @@
 			{#each yTicks as tick}
 				<g class="tick tick-{tick}" transform="translate(0, {yScale(tick)})">
 					<line x2="100%" />
-					<text y="-4">{tick}</text>
+					<text y="-4">{tick}%</text>
 				</g>
 			{/each}
 		</g>
@@ -42,6 +42,9 @@
 					<text x={barWidth / 2} y="-4">{point.skill}</text>
 				</g>
 			{/each}
+			<g class="tick" transform="translate({xScale(points.length)},{height})">
+				<text x={barWidth / 2} y="-4">Skill</text>
+			</g>
 		</g>
 
 		<g class="bars">

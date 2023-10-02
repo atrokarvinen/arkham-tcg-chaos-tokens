@@ -42,6 +42,7 @@
 		</div>
 
 		<ul class="space-y-1">
+			<span>Variable difficulties:</span>
 			{#each variableTokens as token}
 				<li class="flex space-x-2 items-center">
 					<TokenIcon

@@ -32,11 +32,11 @@
 
 <div
 	class={`w${size} h-${size} shrink-0 rounded-full ${
-		isFilled ? 'bg-blue-500' : ''
+		isFilled ? 'bg-primary-500' : ''
 	} flex items-center justify-center`}
 >
 	{#if number !== undefined}
-		<span class="font-bold text-lg">{numberStr}</span>
+		<span class="font-bold text-lg text-black">{numberStr}</span>
 	{:else if name}
 		<img
 			src={getImageSrc(name)}
