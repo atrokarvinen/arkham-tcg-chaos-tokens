@@ -14,27 +14,35 @@
 	const increment = () => value++;
 	const decrement = () => value--;
 
-	$: console.log('[input] value:', value);
+	$: value = cutValue(value);
+
+	const cutValue = (v: number | string) => {
+		const value = Number(v);
+		const cut = value < $$props.min ? $$props.min : value > $$props.max ? $$props.max : value;
+		return cut;
+	};
+
+	$: name = label?.toLocaleLowerCase();
 </script>
 
-<div class="flex space-x-2">
-	{#if label}
-		<label>
-			<span>{`${label}:`}</span>
-			<input
-				class="input"
-				type="number"
-				{...$$props}
-				bind:value
-				min={positiveOnly ? 0 : undefined}
-			/>
-		</label>
-	{:else}
-		<input class="input" type="number" {...$$props} bind:value min={positiveOnly ? 0 : undefined} />
-	{/if}
+{#if label}
+	<label for={name}>{`${label}:`} </label>
+{/if}
+<div class="flex space-x-2 items-center">
+	<input
+		{...$$props}
+		id={name}
+		{name}
+		class="input w-16 h-8 text-center text-lg"
+		type="number"
+		bind:value
+		min={positiveOnly ? 0 : undefined}
+	/>
 	<div class="flex flex-row items-center space-x-2">
-		<button class="btn-icon variant-ghost-primary" on:click={increment}
-			><i class="fa-solid fa-plus" /></button
+		<button
+			class="btn-icon variant-ghost-primary"
+			on:click={increment}
+			disabled={$$props.max && $$props.max === value}><i class="fa-solid fa-plus" /></button
 		>
 		<button
 			class="btn-icon variant-ghost-secondary"
@@ -43,3 +51,11 @@
 		>
 	</div>
 </div>
+
+<style>
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+</style>

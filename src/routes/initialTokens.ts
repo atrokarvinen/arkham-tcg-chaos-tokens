@@ -20,7 +20,13 @@ export const initialTokens: Token[] = [
 		name: 'Elder sign',
 		isVariableValue: true
 	},
-	{ id: 12, rulebookSortOrder: 14, quantity: 1, value: -99, name: 'Auto-fail' },
+	{
+		id: 12,
+		rulebookSortOrder: 14,
+		quantity: 1,
+		value: Number.NEGATIVE_INFINITY,
+		name: 'Auto-fail'
+	},
 	{
 		id: 13,
 		rulebookSortOrder: 13,

@@ -24,10 +24,6 @@
 	<IntegerInput label="Skill check" bind:value={skillCheck} positiveOnly />
 </div>
 
-<div>
-	<span>Token</span>
-	<span>Skill check</span>
-</div>
 <ul class="space-y-2">
 	{#each variableTokens as token}
 		<li class="flex space-x-2 items-center">

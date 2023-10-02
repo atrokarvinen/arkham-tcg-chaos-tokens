@@ -22,7 +22,7 @@
 					isFilled
 					size="8"
 				/>
-				<IntegerInput bind:value={token.quantity} positiveOnly />
+				<IntegerInput bind:value={token.quantity} positiveOnly max={10} />
 			</li>
 		{/each}
 	</ul>
