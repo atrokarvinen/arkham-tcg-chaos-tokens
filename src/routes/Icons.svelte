@@ -5,17 +5,17 @@
 />
 <img
 	class="w-16 h-16 object-contain border-solid border-2 border-black bg-blue-500"
-	src="auto-fail-brown.svg"
+	src="auto-fail.svg"
 	alt="auto-fail"
 />
 <img
 	class="w-16 h-16 object-contain border-solid border-2 border-black bg-blue-500"
-	src="elder-thing-brown.svg"
+	src="elder-thing.svg"
 	alt="elder-thing"
 />
 <img
 	class="w-16 h-16 object-contain border-solid border-2 border-black bg-blue-500"
-	src="cultist-brown.svg"
+	src="cultist.svg"
 	alt="cultist"
 />
 <img
@@ -25,7 +25,7 @@
 />
 <img
 	class="w-16 h-16 object-contain border-solid border-2 border-black bg-blue-500"
-	src="tablet-brown.svg"
+	src="tablet.svg"
 	alt="tablet"
 />
 

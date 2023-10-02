@@ -8,3 +8,5 @@ export type Token = {
 };
 
 export type TokenName = 'Elder sign' | 'Auto-fail' | 'Elder thing' | 'Cultist' | 'Skull' | 'Tablet';
+
+export type ChartDataPoint = { skill: number; successChance: number };

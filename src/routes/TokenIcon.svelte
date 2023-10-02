@@ -9,17 +9,17 @@
 	const getImageSrc = (name: TokenName) => {
 		switch (name) {
 			case 'Auto-fail':
-				return 'auto-fail-brown.svg';
+				return 'auto-fail.svg';
 			case 'Cultist':
-				return 'cultist-brown.svg';
+				return 'cultist.svg';
 			case 'Elder sign':
 				return 'elder-sign.png';
 			case 'Elder thing':
-				return 'elder-thing-brown.svg';
+				return 'elder-thing.svg';
 			case 'Skull':
 				return 'skull.png';
 			case 'Tablet':
-				return 'tablet-brown.svg';
+				return 'tablet.svg';
 			default:
 				break;
 		}
