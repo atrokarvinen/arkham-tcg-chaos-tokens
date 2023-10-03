@@ -14,9 +14,3 @@
 	</svelte:fragment>
 	<svelte:fragment slot="trail" />
 </AppBar>
-
-<style>
-	.app {
-		max-width: 500px;
-	}
-</style>

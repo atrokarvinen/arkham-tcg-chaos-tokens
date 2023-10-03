@@ -37,7 +37,7 @@
 <div class="space-y-4 items-center flex flex-col">
 	<div class="space-y-4 items-end flex flex-col">
 		<div>
-			<IntegerInput label="Investigator skill" bind:value={skillValue} />
+			<IntegerInput label="Investigator skill" bind:value={skillValue} sm={false}/>
 			<IntegerInput label="Skill check" bind:value={skillCheck} positiveOnly />
 		</div>
 

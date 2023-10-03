@@ -35,7 +35,7 @@
 		{...$$props}
 		id={name}
 		{name}
-		class={`input w-${sm ? 8 : 16} h-8 text-center text-lg`}
+		class={`input w-${sm ? "8" : "16"} h-8 text-center text-lg`}
 		type="number"
 		bind:value
 		min={positiveOnly ? 0 : undefined}
