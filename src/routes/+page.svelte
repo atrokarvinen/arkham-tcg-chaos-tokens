@@ -15,12 +15,7 @@
 	<ul class="flex flex-row flex-wrap">
 		{#each $tokens as token}
 			<li class="flex even:ml-4 space-x-1 mb-1 items-center">
-				<TokenIcon
-					name={token.name}
-					number={token.name ? undefined : token.value}
-					isFilled
-					size="8"
-				/>
+				<TokenIcon name={token.name} isFilled />
 				<IntegerInput bind:value={token.quantity} positiveOnly max={10} sm />
 			</li>
 		{/each}

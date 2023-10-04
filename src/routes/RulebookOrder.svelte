@@ -1,6 +1,6 @@
 <script lang="ts">
 	import TokenIcon from './TokenIcon.svelte';
-	import type { Token, TokenName } from './types';
+	import type { Token } from './types';
 
 	export let tokens: Token[];
 
@@ -9,11 +9,7 @@
 		.map((token) => {
 			const { quantity, value, name } = token;
 			const arr = Array.from(Array(quantity).keys());
-			return arr.map((_, index) =>
-				name
-					? { name, number: undefined, key: `${token.id}-${index}` }
-					: { name: 'Auto-fail' as TokenName, number: value, key: `${token.id}-${index}` }
-			);
+			return arr.map((_, index) => ({ name, key: `${token.id}-${index}` }));
 		})
 		.flat();
 
