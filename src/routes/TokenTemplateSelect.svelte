@@ -19,11 +19,7 @@
 	$: handleTemplateChange(selectedTemplate);
 
 	const handleTemplateChange = (template: Record<TokenName, number> | undefined) => {
-		console.log('selected template name:', selectedValue);
-		console.log('selected template:', template);
-
 		if (!template) return;
-
 		$tokens = $tokens.map((t) => {
 			const quantity = template[t.name];
 			return { ...t, quantity: quantity };
