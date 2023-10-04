@@ -25,7 +25,7 @@
 </script>
 
 <Accordion>
-	<AccordionItem open>
+	<AccordionItem open={process.env.NODE_ENV === 'development'}>
 		<svelte:fragment slot="lead"><i class="fa-solid fa-chart-bar fa-rotate-270" /></svelte:fragment>
 		<svelte:fragment slot="summary">Details</svelte:fragment>
 		<svelte:fragment slot="content">

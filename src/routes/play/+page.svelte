@@ -12,8 +12,6 @@
 	$: successTokens = filterSuccessTokens(allTokens, skillValue, skillCheck);
 	$: successCount = successTokens.length;
 	$: odds = successCount / allTokens.length;
-
-	$: variableTokens = $tokens.filter((t) => t.isVariable && t.quantity > 0);
 </script>
 
 <div class="space-y-4 items-center flex flex-col md:w-96">
@@ -25,11 +23,13 @@
 
 		<ul class="space-y-1">
 			<span>Variable difficulties:</span>
-			{#each variableTokens as token}
-				<li class="flex flex-row space-x-2 items-center">
-					<TokenIcon name={token.name} isFilled />
-					<IntegerInput bind:value={token.value} />
-				</li>
+			{#each $tokens as token}
+				{#if token.isVariable && token.quantity > 0}
+					<li class="flex flex-row space-x-2 items-center">
+						<TokenIcon name={token.name} isFilled />
+						<IntegerInput bind:value={token.value} />
+					</li>
+				{/if}
 			{/each}
 		</ul>
 	</div>
