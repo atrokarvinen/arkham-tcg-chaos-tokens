@@ -8,8 +8,11 @@
 	<p>
 		Enter the correct amount of chaos tokens used in the scenario in the tab 'Setup'. After setup is
 		done, estimate odds by inserting current skill value and required skill check in the 'Play' tab.
-		Additionally, the chaos tokens that have a variable difficulty, such as the skull token, can be
-		dynamically adjusted in the Play tab.
+		Additionally, some chaos tokens, such as
+		<img class="w-8 h-8 inline invert" src="cultist.svg" alt="cultist" />
+		,
+		<img class="w-8 h-8 inline invert p-1" src="elder-sign.png" alt="elder-sign" />
+		have a variable difficulty, which can be dynamically adjusted in the Play tab.
 	</p>
 	<h2 class="h2">Useful links</h2>
 	<div class="flex flex-col space-y-2">
