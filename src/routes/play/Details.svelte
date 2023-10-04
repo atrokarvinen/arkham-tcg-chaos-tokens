@@ -30,12 +30,10 @@
 		<svelte:fragment slot="summary">Details</svelte:fragment>
 		<svelte:fragment slot="content">
 			<div class="grid grid-cols-5 w-fit m-auto gap-1">
-				{#each resolution as resolutionToken, i (`${resolutionToken.name}-${resolutionToken.number}-${i}}`)}
+				{#each resolution as resolutionToken, i (`${resolutionToken.name}-${i}}`)}
 					<TokenIcon
 						name={resolutionToken.name}
-						number={resolutionToken.number}
 						color={resolutionToken.success ? 'success' : 'error'}
-						size="8"
 						isFilled
 					/>
 				{/each}

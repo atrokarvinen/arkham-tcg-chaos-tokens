@@ -11,3 +11,7 @@ export const flattenTokens = ($tokens: Token[]) => {
 		})
 		.flat();
 };
+
+export const isNumericToken = (tokenName: string) => {
+	return Number.isInteger(Number(tokenName));
+};

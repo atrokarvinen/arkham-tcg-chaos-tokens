@@ -18,14 +18,14 @@
 		.flat();
 
 	const sortByRulebook = (a: Token, b: Token) => {
-		return a.rulebookSortOrder < b.rulebookSortOrder ? -1 : 1;
+		return a.order < b.order ? -1 : 1;
 	};
 </script>
 
 <div>
 	<ul class="flex flex-wrap items-center">
 		{#each tokensInBag as token, i (token.key)}
-			<TokenIcon name={token.name} number={token.number} isFilled={false} size={'8'} />
+			<TokenIcon name={token.name} />
 			{#if i < tokensInBag.length - 1}
 				<span class="font-bold text-lg mr-1">,</span>
 			{/if}

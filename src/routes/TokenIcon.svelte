@@ -1,11 +1,11 @@
 <script lang="ts">
+	import { isNumericToken } from '$lib/tokens';
 	import type { TokenName } from './types';
 
-	export let number: number | undefined = undefined;
-	export let name: TokenName | undefined;
+	export let name: TokenName;
 	export let isFilled: boolean = false;
 	export let color: 'primary' | 'success' | 'error' = 'primary';
-	export let size: '8' | '16';
+	export let size: '8' | '16' = '8';
 
 	$: widthClass = size === '8' ? 'w-8' : 'w-16';
 	$: heightClass = size === '8' ? 'h-8' : 'h-16';
@@ -40,14 +40,13 @@
 
 	const hasExtraPadding = name === 'Elder sign' || name === 'Skull';
 	const extraPadding = size === '16' ? 'p-2' : 'p-1';
-	const numberStr = number && number > 0 ? '+' + number.toString() : number?.toString();
 </script>
 
 <div
 	class={`${widthClass} ${heightClass} shrink-0 rounded-full ${fillClass} flex items-center justify-center`}
 >
-	{#if number !== undefined}
-		<span class="font-bold text-lg text-black">{numberStr}</span>
+	{#if isNumericToken(name)}
+		<span class="font-bold text-lg text-black">{name}</span>
 	{:else if name}
 		<img
 			src={getImageSrc(name)}
