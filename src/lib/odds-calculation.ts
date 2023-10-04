@@ -20,13 +20,13 @@ export const filterFailureTokens = (tokens: CalculationToken[], skill: number, c
 };
 
 export const calculateResolutionTokens = (
-	tokens: CalculationToken[],
+	allTokens: CalculationToken[],
 	skill: number,
 	check: number
 ) => {
-	const tokenss = tokens.sort(orderByDifficulty);
-	const successTokens = filterSuccessTokens(tokenss, skill, check);
-	const failureTokens = filterFailureTokens(tokenss, skill, check);
+	const tokens = allTokens.sort(orderByDifficulty);
+	const successTokens = filterSuccessTokens(tokens, skill, check);
+	const failureTokens = filterFailureTokens(tokens, skill, check);
 	const resolutionTokens = [...successTokens, ...failureTokens];
 	return resolutionTokens;
 };

@@ -21,7 +21,7 @@ export const initialTokens: Token[] = [
 		id: 15,
 		order: 15,
 		quantity: 1,
-		value: Number.NEGATIVE_INFINITY,
+		value: -1e10,
 		name: 'Auto-fail',
 		isVariable: false
 	}
