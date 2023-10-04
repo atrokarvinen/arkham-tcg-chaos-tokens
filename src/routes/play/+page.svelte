@@ -2,7 +2,7 @@
 	import IntegerInput from '$lib/components/IntegerInput.svelte';
 	import { flattenTokens, tokens } from '$lib/tokens';
 	import TokenIcon from '../TokenIcon.svelte';
-	import { filterSuccessTokens } from '../test/utils';
+	import { filterSuccessTokens } from '../test/odds-calculation';
 	import Details from './Details.svelte';
 
 	let skillValue = 0;

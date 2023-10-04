@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	import TokenIcon from '../TokenIcon.svelte';
-	import { calculateResolutionTokens, filterSuccessTokens } from '../test/utils';
+	import { calculateResolutionTokens, filterSuccessTokens } from '../test/odds-calculation';
 	import type { ChartDataPoint, Token } from '../types';
 	import BarChart from './BarChart.svelte';
 
