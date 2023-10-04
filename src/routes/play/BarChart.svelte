@@ -85,7 +85,7 @@
 	}
 
 	.tick text {
-		fill: black;
+		fill: white;
 		text-anchor: start;
 	}
 

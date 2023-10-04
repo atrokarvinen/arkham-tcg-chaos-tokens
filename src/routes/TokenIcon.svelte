@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { isNumericToken } from '$lib/tokens';
+	import { modeCurrent } from '@skeletonlabs/skeleton';
 	import type { TokenName } from './types';
 
 	export let name: TokenName;
 	export let isFilled: boolean = false;
 	export let color: 'primary' | 'success' | 'error' = 'primary';
+	export let dark: boolean = false;
 	export let size: '8' | '16' = '8';
 
 	$: widthClass = size === '8' ? 'w-8' : 'w-16';
@@ -18,6 +20,16 @@
 			? 'bg-error-500'
 			: '';
 	$: fillClass = isFilled ? fillColor : '';
+	$: isLightMode = $modeCurrent;
+	$: invertClass = shouldInvertImageColor(isLightMode, dark) ? 'invert' : '';
+	$: textColor = !shouldInvertImageColor(isLightMode, dark) ? 'text-black' : '';
+
+	const shouldInvertImageColor = (isLightMode: boolean, iconDark: boolean) => {
+		if (isLightMode && iconDark) return false;
+		if (isLightMode && !iconDark) return true;
+		if (!isLightMode && iconDark) return true;
+		if (!isLightMode && !iconDark) return false;
+	};
 
 	const getImageSrc = (name: TokenName) => {
 		switch (name) {
@@ -46,12 +58,12 @@
 	class={`${widthClass} ${heightClass} shrink-0 rounded-full ${fillClass} flex items-center justify-center`}
 >
 	{#if isNumericToken(name)}
-		<span class="font-bold text-lg text-black">{name}</span>
+		<span class={`font-bold text-lg ${textColor}`}>{name}</span>
 	{:else if name}
 		<img
 			src={getImageSrc(name)}
 			alt={name}
-			class={`w-full h-full object-contain ${hasExtraPadding ? extraPadding : ''}`}
+			class={`w-full h-full object-contain ${invertClass} ${hasExtraPadding ? extraPadding : ''}`}
 		/>
 	{/if}
 </div>

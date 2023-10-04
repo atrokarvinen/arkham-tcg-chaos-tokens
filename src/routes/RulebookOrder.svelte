@@ -21,7 +21,7 @@
 <div>
 	<ul class="flex flex-wrap items-center">
 		{#each tokensInBag as token, i (token.key)}
-			<TokenIcon name={token.name} />
+			<TokenIcon name={token.name} dark />
 			{#if i < tokensInBag.length - 1}
 				<span class="font-bold text-lg mr-1">,</span>
 			{/if}
