@@ -14,8 +14,8 @@ export const initialTokens: Token[] = [
 
 	{ id: 11, order: 11, quantity: 2, value: 0, name: 'Skull', isVariable: true },
 	{ id: 12, order: 12, quantity: 1, value: 0, name: 'Cultist', isVariable: true },
-	{ id: 13, order: 13, quantity: 1, value: 0, name: 'Elder thing', isVariable: true },
-	{ id: 14, order: 14, quantity: 1, value: 0, name: 'Tablet', isVariable: true },
+	{ id: 13, order: 13, quantity: 1, value: 0, name: 'Tablet', isVariable: true },
+	{ id: 14, order: 14, quantity: 0, value: 0, name: 'Elder thing', isVariable: true },
 	{ id: 16, order: 16, quantity: 1, value: 0, name: 'Elder sign', isVariable: true },
 	{
 		id: 15,
