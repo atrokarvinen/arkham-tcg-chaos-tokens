@@ -4,7 +4,20 @@
 	export let number: number | undefined = undefined;
 	export let name: TokenName | undefined;
 	export let isFilled: boolean = false;
+	export let color: 'primary' | 'success' | 'error' = 'primary';
 	export let size: '8' | '16';
+
+	$: widthClass = size === '8' ? 'w-8' : 'w-16';
+	$: heightClass = size === '8' ? 'h-8' : 'h-16';
+	$: fillColor =
+		color === 'primary'
+			? 'bg-primary-500'
+			: color === 'success'
+			? 'bg-success-500'
+			: color === 'error'
+			? 'bg-error-500'
+			: '';
+	$: fillClass = isFilled ? fillColor : '';
 
 	const getImageSrc = (name: TokenName) => {
 		switch (name) {
@@ -31,9 +44,7 @@
 </script>
 
 <div
-	class={`w${size} h-${size} shrink-0 rounded-full ${
-		isFilled ? 'bg-primary-500' : ''
-	} flex items-center justify-center`}
+	class={`${widthClass} ${heightClass} shrink-0 rounded-full ${fillClass} flex items-center justify-center`}
 >
 	{#if number !== undefined}
 		<span class="font-bold text-lg text-black">{numberStr}</span>
@@ -45,13 +56,3 @@
 		/>
 	{/if}
 </div>
-
-<style>
-	.w8 {
-		width: 2rem;
-	}
-
-	.w16 {
-		width: 4rem;
-	}
-</style>

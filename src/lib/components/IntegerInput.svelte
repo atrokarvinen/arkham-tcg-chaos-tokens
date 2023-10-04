@@ -25,17 +25,18 @@
 	};
 
 	$: name = label?.toLocaleLowerCase();
+	$: width = sm ? 'w-8' : 'w-16';
 </script>
 
 {#if label}
 	<label for={name}>{`${label}:`} </label>
 {/if}
-<div class="flex space-x-2 items-center">
+<div class="flex flex-row space-x-2 items-center">
 	<input
 		{...$$props}
 		id={name}
 		{name}
-		class={`input w-${sm ? "8" : "16"} h-8 text-center text-lg`}
+		class={`input ${width} h-8 text-center text-lg`}
 		type="number"
 		bind:value
 		min={positiveOnly ? 0 : undefined}
@@ -59,5 +60,8 @@
 	input[type='number']::-webkit-outer-spin-button {
 		-webkit-appearance: none;
 		margin: 0;
+	}
+	input[type='number'] {
+		-moz-appearance: textfield;
 	}
 </style>
