@@ -1,4 +1,4 @@
-import type { TokenName } from '../types';
+import type { TokenName } from '../routes/types';
 
 export const isCheckSuccessfull = (skill: number, check: number, token: number) => {
 	return skill - check + token >= 0;
