@@ -7,7 +7,7 @@ The project also serves as a hobby project for learning about Svelte, SvelteKit,
 ## Example images of the application
 
 Setup page for selecting chaos tokens used in the scenario.
-![plot](./static/example-setup.jpg)
+![plot](./static/example-setup.JPG)
 
 Play page for adjusting skill, skill check and chaos token difficulties during the game play. The success chance for beating a check is calculated and success/failure tokens are displayed in details section.
-![plot](./static/example-play.jpg)
+![plot](./static/example-play.JPG)
