@@ -25,7 +25,7 @@
 			<span>Variable difficulties:</span>
 			{#each $tokens as token}
 				{#if token.isVariable && token.quantity > 0}
-					<li class="flex flex-row space-x-2 items-center">
+					<li class="flex flex-row space-x-3 items-center">
 						<TokenIcon name={token.name} isFilled />
 						<IntegerInput bind:value={token.value} />
 					</li>

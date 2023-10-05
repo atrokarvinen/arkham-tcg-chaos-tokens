@@ -31,28 +31,26 @@
 {#if label}
 	<label for={name}>{`${label}:`} </label>
 {/if}
-<div class="flex flex-row space-x-2 items-center">
+<div class="flex flex-row items-center">
+	<button
+		class="btn-icon w-8 variant-ghost-primary rounded-r-none"
+		on:click={increment}
+		disabled={$$props.max && $$props.max === value}><i class="fa-solid fa-plus" /></button
+	>
 	<input
 		{...$$props}
 		id={name}
 		{name}
-		class={`input ${width} h-8 text-center text-lg`}
+		class={`input ${width} h-8 text-center text-lg rounded-none`}
 		type="number"
 		bind:value
 		min={positiveOnly ? 0 : undefined}
 	/>
-	<div class="flex flex-row items-center space-x-2">
-		<button
-			class="btn-icon w-8 variant-ghost-primary"
-			on:click={increment}
-			disabled={$$props.max && $$props.max === value}><i class="fa-solid fa-plus" /></button
-		>
-		<button
-			class="btn-icon w-8 variant-filled-secondary"
-			on:click={decrement}
-			disabled={positiveOnly && value <= 0}><i class="fa-solid fa-minus" /></button
-		>
-	</div>
+	<button
+		class="btn-icon w-8 variant-filled-secondary rounded-l-none"
+		on:click={decrement}
+		disabled={positiveOnly && value <= 0}><i class="fa-solid fa-minus" /></button
+	>
 </div>
 
 <style>

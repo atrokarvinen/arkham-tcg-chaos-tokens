@@ -16,7 +16,7 @@
 	<RulebookOrder tokens={$tokens} />
 	<ul class="flex flex-row flex-wrap">
 		{#each $tokens as token}
-			<li class="flex even:ml-4 space-x-1 mb-1 items-center">
+			<li class="flex even:ml-6 space-x-3 mb-1 items-center">
 				<TokenIcon name={token.name} isFilled />
 				<IntegerInput bind:value={token.quantity} positiveOnly max={10} sm />
 			</li>
