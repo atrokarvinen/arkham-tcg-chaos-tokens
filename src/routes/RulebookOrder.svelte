@@ -18,7 +18,7 @@
 	};
 </script>
 
-<div>
+<div class="h-32 overflow-y-auto">
 	<ul class="flex flex-wrap items-center">
 		{#each tokensInBag as token, i (token.key)}
 			<TokenIcon name={token.name} dark />
