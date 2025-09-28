@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { AppBar, TabAnchor, TabGroup } from '@skeletonlabs/skeleton';
+  import { page } from "$app/state";
+  import { Navigation } from "@skeletonlabs/skeleton-svelte";
 </script>
 
-<AppBar regionRowMain="place-self-center">
-	<svelte:fragment slot="lead" />
-	<svelte:fragment>
-		<TabGroup>
-			<TabAnchor href="/" selected={$page.url.pathname === '/'}>Setup</TabAnchor>
-			<TabAnchor href="/play" selected={$page.url.pathname.includes('/play')}>Play</TabAnchor>
-			<TabAnchor href="/about" selected={$page.url.pathname.includes('/about')}>About</TabAnchor>
-		</TabGroup>
-	</svelte:fragment>
-	<svelte:fragment slot="trail" />
-</AppBar>
+<Navigation.Bar>
+  <Navigation.Tile selected={page.url.pathname === "/"} href="/"
+    >Setup</Navigation.Tile
+  >
+  <Navigation.Tile selected={page.url.pathname === "/play"} href="/play">
+    Play
+  </Navigation.Tile>
+  <Navigation.Tile selected={page.url.pathname === "/about"} href="/about">
+    About
+  </Navigation.Tile>
+</Navigation.Bar>

@@ -14,8 +14,8 @@
 	$: odds = successCount / allTokens.length;
 </script>
 
-<div class="space-y-4 items-center flex flex-col md:w-96">
-	<div class="space-y-4 items-end flex flex-col">
+<div class="flex flex-col items-center space-y-4 md:w-96">
+	<div class="flex flex-col items-end space-y-4">
 		<div>
 			<IntegerInput label="Investigator skill" bind:value={skillValue} />
 			<IntegerInput label="Skill check" bind:value={skillCheck} positiveOnly />
@@ -25,7 +25,7 @@
 			<span>Variable difficulties:</span>
 			{#each $tokens as token}
 				{#if token.isVariable && token.quantity > 0}
-					<li class="flex flex-row space-x-3 items-center">
+					<li class="flex flex-row items-center space-x-3">
 						<TokenIcon name={token.name} isFilled />
 						<IntegerInput bind:value={token.value} />
 					</li>

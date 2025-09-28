@@ -23,7 +23,7 @@
 		{#each tokensInBag as token, i (token.key)}
 			<TokenIcon name={token.name} dark />
 			{#if i < tokensInBag.length - 1}
-				<span class="font-bold text-lg mr-1">,</span>
+				<span class="mr-1 text-lg font-bold">,</span>
 			{/if}
 		{/each}
 	</ul>
